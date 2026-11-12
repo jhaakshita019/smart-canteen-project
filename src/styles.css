@@ -1,0 +1,193 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-ngo: var(--ngo);
+  --color-ngo-foreground: var(--ngo-foreground);
+  --color-ngo-soft: var(--ngo-soft);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  
+  /* User High-Contrast Color Palette */
+  /* Background & Surface Neutrals: Crisp White (#FFFFFF) & Clean Off-White (#F8F9FA) */
+  --background: #F8F9FA;
+  --foreground: #1A202C; /* Charcoal Slate */
+  --card: #FFFFFF;       /* Crisp White */
+  --card-foreground: #1A202C;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A202C;
+  
+  /* Primary Brand & CTA Accent: Vibrant Orange (#FF6B35) for Order Now & appetite appeal */
+  --primary: #FF6B35;
+  --primary-foreground: #FFFFFF;
+  
+  /* Secondary Structural Color: Deep Teal (#004E64) for top nav, sidebar headers, kiosk tabs */
+  --secondary: #004E64;
+  --secondary-foreground: #FFFFFF;
+  
+  --muted: #EEF2F6;
+  --muted-foreground: #64748B;
+  
+  --accent: #FFF0EB;
+  --accent-foreground: #C84B1A;
+  
+  /* Soft Coral Red (#E63946) for Out of Stock and alerts */
+  --destructive: #E63946;
+  --destructive-foreground: #FFFFFF;
+  
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #FF6B35;
+  
+  /* NGO: Deep Teal tone */
+  --ngo: #004E64;
+  --ngo-foreground: #FFFFFF;
+  --ngo-soft: #E6F3F7;
+  
+  /* Semantic Order Status Colors */
+  --success: #10B981; /* Emerald Green: Ready for Pickup & Veg */
+  --warning: #F59E0B; /* Warm Amber: Preparing in Kitchen */
+  --coral: #E63946;   /* Soft Coral Red: Out of Stock */
+  
+  --chart-1: #FF6B35;
+  --chart-2: #004E64;
+  --chart-3: #10B981;
+  --chart-4: #F59E0B;
+  --chart-5: #E63946;
+  
+  /* Sidebar: Deep Teal structural feel */
+  --sidebar: #004E64;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #FF6B35;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #0A6078;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #003B4C;
+  --sidebar-ring: #FF6B35;
+}
+
+.dark {
+  --background: #0B131B;
+  --foreground: #F8F9FA;
+  --card: #14202B;
+  --card-foreground: #F8F9FA;
+  --popover: #14202B;
+  --popover-foreground: #F8F9FA;
+  
+  --primary: #FF7D4D;
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #0A6078;
+  --secondary-foreground: #FFFFFF;
+  
+  --muted: #1E2D3B;
+  --muted-foreground: #94A3B8;
+  
+  --accent: #2A1A14;
+  --accent-foreground: #FF9B73;
+  
+  --destructive: #F87171;
+  --destructive-foreground: #FFFFFF;
+  
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: #FF7D4D;
+  
+  --ngo: #22D3EE;
+  --ngo-foreground: #082F49;
+  --ngo-soft: #164E63;
+  
+  --success: #34D399;
+  --warning: #FBBF24;
+  --coral: #F87171;
+  
+  --chart-1: #FF7D4D;
+  --chart-2: #38BDF8;
+  --chart-3: #34D399;
+  --chart-4: #FBBF24;
+  --chart-5: #F87171;
+  
+  --sidebar: #0E1822;
+  --sidebar-foreground: #F8F9FA;
+  --sidebar-primary: #FF7D4D;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #192837;
+  --sidebar-accent-foreground: #F8F9FA;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #FF7D4D;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+}

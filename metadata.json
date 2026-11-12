@@ -1,0 +1,8 @@
+{
+  "name": "Remix Smart Canteen",
+  "description": "AI-powered campus food platform for students, canteen staff, admins, and verified NGOs with live seating, meal schedules, stock tracking, and surplus food donations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

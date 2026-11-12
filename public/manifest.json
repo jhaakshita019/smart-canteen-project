@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "Smart Canteen",
+  "short_name": "Canteen",
+  "description": "Smart campus canteen app with live ordering, cafeteria seating counter, and surplus food redistribution.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F8F9FA",
+  "theme_color": "#004E64",
+  "categories": ["food", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/app-logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
